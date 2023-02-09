@@ -1,6 +1,7 @@
+// eslint-disable no-console
 import readlineSync from 'readline-sync';
 
-export function askName(){
+export default function askName() {
   const name = readlineSync.question('May I have your name?');
-  console.log(`Hello, ${name}!`)
+  console.log(`Hello, ${name}!`);
 }

@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-import {askName} from './cli.js';
+
+// eslint-disable import/extensions
+import askName from './cli.js';
 
 console.log('Welcome to the Brain Games!');
+
 askName();
