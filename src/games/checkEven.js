@@ -1,5 +1,5 @@
 // eslint-disable no-console
-import gameSkeleton from './index.js';
+import gameSkeleton from '../index.js';
 
 export default function checkEven() {
   const randomNumber = Math.floor(Math.random() * 100);
