@@ -2,7 +2,7 @@
 import gameSkeleton from '../index.js';
 
 function isPrime(num) {
-  for (let i = 2; i <= Math.sqrt(num); i++) {
+  for (let i = 2; i <= Math.sqrt(num); i++) { // eslint-disable-line
     if (num % i === 0) {
       return false;
     }

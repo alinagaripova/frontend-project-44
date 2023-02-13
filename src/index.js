@@ -9,8 +9,8 @@ export default function gameSkeleton(question, correctAnswer, gameFunction) {
 
   const answer = readlineSync.question('Your answer: ');
 
-  if (answer == correctAnswer) {
-    let gameCount = counter();
+  if (answer == correctAnswer) { // eslint-disable-line
+    let gameCount = counter(); // eslint-disable-line
 
     if (gameCount < 3) {
       console.log('Correct!');

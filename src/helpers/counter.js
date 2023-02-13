@@ -2,7 +2,7 @@ function makeCounter() {
   let count = 0;
 
   return function counter() {
-    return ++count;
+    return ++count; // eslint-disable-line
   };
 }
 

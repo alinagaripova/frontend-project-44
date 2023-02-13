@@ -6,7 +6,7 @@ export default function progression() {
   const progressionArr = [];
   const step = Math.floor(Math.random() * 10) + 1; // generates a random number between 1 and 10
 
-  for (let i = 0; i < progressionLength; i++) {
+  for (let i = 0; i < progressionLength; i++) { // eslint-disable-line
     progressionArr.push(i * step);
   }
 

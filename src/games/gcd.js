@@ -4,7 +4,7 @@ import gameSkeleton from '../index.js';
 function NOD(x, y) {
   if (y > x) return NOD(y, x);
   if (!y) return x;
-	return NOD(y, x % y);
+  return NOD(y, x % y);
 }
 
 export default function findGSD() {
