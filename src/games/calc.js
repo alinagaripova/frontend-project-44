@@ -1,7 +1,7 @@
 // eslint-disable no-console
 import gameSkeleton from '../index.js';
 
-export default function calc(winCount = 0) {
+export default function calc() {
   const firstRandomNumber = Math.floor(Math.random() * 100);
   const secondRandomNumber = Math.floor(Math.random() * 100);
 
