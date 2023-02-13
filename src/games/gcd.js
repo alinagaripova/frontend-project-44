@@ -11,7 +11,7 @@ export default function findGSD() {
   const firstRandomNumber = Math.floor(Math.random() * 100);
   const secondRandomNumber = Math.floor(Math.random() * 100);
 
-  const question = `Find the greatest common divisor of given numbers. ${firstRandomNumber} ${secondRandomNumber}`
+  const question = `Find the greatest common divisor of given numbers. \nQuestion: ${firstRandomNumber} ${secondRandomNumber}`
   const correctAnswer = NOD(firstRandomNumber, secondRandomNumber);
 
   gameSkeleton(question, correctAnswer, findGSD)
