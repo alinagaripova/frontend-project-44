@@ -2,6 +2,7 @@
 import readlineSync from 'readline-sync';
 import { name } from './cli.js';
 import counter from './helpers/counter.js';
+// import makeRandomCounter from './helpers/randomCounter.js';
 
 export default function gameSkeleton(question, correctAnswer, gameFunction) {
   console.log(question);
@@ -19,6 +20,6 @@ export default function gameSkeleton(question, correctAnswer, gameFunction) {
     }
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
   }
 }

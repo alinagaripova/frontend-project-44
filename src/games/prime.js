@@ -13,8 +13,8 @@ function isPrime(num) {
 export default function prime() {
   const randomNumber = Math.floor(Math.random() * 100);
 
-  const question = `Answer "yes" if given number is prime. Otherwise answer "no". \nQuestion: ${randomNumber}`
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no'
+  const question = `Answer "yes" if given number is prime. Otherwise answer "no". \nQuestion: ${randomNumber}`;
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
-  gameSkeleton(question, correctAnswer, prime)
+  gameSkeleton(question, correctAnswer, prime);
 }

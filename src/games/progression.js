@@ -13,9 +13,9 @@ export default function progression() {
   const hiddenIndex = Math.floor(Math.random() * progressionLength);
   const correctAnswer = progressionArr[hiddenIndex]; // save hidden number
 
-  progressionArr[hiddenIndex] = ".."; // change number to ..
+  progressionArr[hiddenIndex] = '..'; // change number to ..
 
-  const question = `What number is missing in the progression? \nQuestion: ${progressionArr.join(" ")}`
+  const question = `What number is missing in the progression? \nQuestion: ${progressionArr.join(' ')}`;
 
-  gameSkeleton(question, correctAnswer, progression)
+  gameSkeleton(question, correctAnswer, progression);
 }
