@@ -16,7 +16,7 @@ export default function gameSkeleton(question, correctAnswer, gameFunction) {
       console.log('Correct!');
       gameFunction();
     } else {
-      console.log(`Congratulations, ${name}`);
+      console.log(`Congratulations, ${name}!`);
     }
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
