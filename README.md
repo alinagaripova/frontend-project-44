@@ -7,6 +7,7 @@
 - make brain-calc
 - make brain-even
 - make brain-gcd
+- make brain-prime
 - make brain-progression
 
 ### demo:
