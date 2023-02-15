@@ -1,25 +1,28 @@
 // eslint-disable no-console
 import readlineSync from 'readline-sync';
-import { name } from './cli.js';
-import counter from './helpers/counter.js';
-// import makeRandomCounter from './helpers/randomCounter.js';
+import greeting from './greeting.js';
 
-export default function gameSkeleton(question, correctAnswer, gameFunction) {
-  console.log(question);
+const gameSkeleton = (gameData) => {
+  const rounds = 3;
+  const { description } = gameData();
+  const name = greeting();
 
-  const answer = readlineSync.question('Your answer: ');
+  console.log(description);
 
-  if (answer == correctAnswer) { // eslint-disable-line
-    let gameCount = counter(); // eslint-disable-line
+  for (let i = 1; i <= rounds; i += 1) {
+    const { question, correctAnswer } = gameData();
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
 
-    if (gameCount < 3) {
+    if (answer === correctAnswer) {
       console.log('Correct!');
-      gameFunction();
     } else {
-      console.log(`Congratulations, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${name}!`);
   }
-}
+  console.log(`Congratulations, ${name}!`);
+};
+
+export default gameSkeleton;

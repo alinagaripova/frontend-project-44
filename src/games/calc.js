@@ -1,12 +1,40 @@
 // eslint-disable no-console
 import gameSkeleton from '../index.js';
+import generateRandomCount from '../utils/randomCount.js';
 
-export default function calc() {
-  const firstRandomNumber = Math.floor(Math.random() * 100);
-  const secondRandomNumber = Math.floor(Math.random() * 100);
+const maxCount = 100;
 
-  const question = `What is the result of the expression? \nQuestion: ${firstRandomNumber} + ${secondRandomNumber}`;
-  const correctAnswer = firstRandomNumber + secondRandomNumber;
+const chooseExpression = (operation, firstRandomNumber, secondRandomNumber) => {
+  switch (operation) {
+    case '-':
+      return firstRandomNumber - secondRandomNumber;
+    case '+':
+      return firstRandomNumber + secondRandomNumber;
+    case '*':
+      return firstRandomNumber * secondRandomNumber;
+    default:
+      return firstRandomNumber + secondRandomNumber;
+  }
+};
 
-  gameSkeleton(question, correctAnswer, calc);
-}
+const calc = () => {
+  const operations = ['-', '+'];
+  const operation = operations[generateRandomCount(operations.length)];
+  const firstRandomNumber = generateRandomCount(maxCount);
+  const secondRandomNumber = generateRandomCount(maxCount);
+
+  const question = `${firstRandomNumber} ${operation} ${secondRandomNumber}`;
+  const correctAnswer = chooseExpression(operation, firstRandomNumber, secondRandomNumber);
+
+  const gameData = {
+    question,
+    correctAnswer: String(correctAnswer),
+    description: 'What is the result of the expression?',
+  };
+
+  return gameData;
+};
+
+export default () => {
+  gameSkeleton(calc);
+};
