@@ -1,8 +1,9 @@
 // eslint-disable no-console
-import gameSkeleton from '../index.js';
+import playGame from '../index.js';
 import generateRandomCount from '../utils/randomCount.js';
 
 const maxCount = 100;
+const description = 'What is the result of the expression?';
 
 const chooseExpression = (operation, firstRandomNumber, secondRandomNumber) => {
   switch (operation) {
@@ -13,11 +14,11 @@ const chooseExpression = (operation, firstRandomNumber, secondRandomNumber) => {
     case '*':
       return firstRandomNumber * secondRandomNumber;
     default:
-      return firstRandomNumber + secondRandomNumber;
+      throw new Error(`Unknown operation ${operation}!`);
   }
 };
 
-const calc = () => {
+const runCalcGame = () => {
   const operations = ['-', '+'];
   const operation = operations[generateRandomCount(operations.length)];
   const firstRandomNumber = generateRandomCount(maxCount);
@@ -29,12 +30,11 @@ const calc = () => {
   const gameData = {
     question,
     correctAnswer: String(correctAnswer),
-    description: 'What is the result of the expression?',
   };
 
   return gameData;
 };
 
 export default () => {
-  gameSkeleton(calc);
+  playGame(runCalcGame, description);
 };

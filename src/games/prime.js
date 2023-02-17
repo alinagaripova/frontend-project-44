@@ -1,10 +1,11 @@
 // eslint-disable no-console
-import gameSkeleton from '../index.js';
+import playGame from '../index.js';
 import generateRandomCount from '../utils/randomCount.js';
 
 const maxCount = 100;
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num) => {
+const checkPrime = (num) => {
   if (num <= 1) {
     return false;
   }
@@ -17,19 +18,18 @@ const isPrime = (num) => {
   return true;
 };
 
-const prime = () => {
+const runPrimeGame = () => {
   const question = generateRandomCount(maxCount);
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  const correctAnswer = checkPrime(question) ? 'yes' : 'no';
 
   const gameData = {
     question,
     correctAnswer: String(correctAnswer),
-    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
   };
 
   return gameData;
 };
 
 export default () => {
-  gameSkeleton(prime);
+  playGame(runPrimeGame, description);
 };

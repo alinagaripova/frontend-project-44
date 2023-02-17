@@ -1,6 +1,8 @@
 // eslint-disable no-console
-import gameSkeleton from '../index.js';
+import playGame from '../index.js';
 import generateRandomCount from '../utils/randomCount.js';
+
+const description = 'What number is missing in the progression?';
 
 const makeProgression = (progressionLength, step) => {
   const progressionArr = [];
@@ -14,7 +16,8 @@ const makeProgression = (progressionLength, step) => {
 
 const progression = () => {
   const progressionLength = 10;
-  const step = generateRandomCount(progressionLength) + 1; // generate random number between 1-10
+  const minCount = 1;
+  const step = generateRandomCount(progressionLength, minCount);
   const progressionArr = makeProgression(progressionLength, step);
   const hiddenIndex = Math.floor(Math.random() * progressionLength);
   const correctAnswer = progressionArr[hiddenIndex]; // save hidden number
@@ -26,12 +29,11 @@ const progression = () => {
   const gameData = {
     question,
     correctAnswer: String(correctAnswer),
-    description: 'What number is missing in the progression?',
   };
 
   return gameData;
 };
 
 export default () => {
-  gameSkeleton(progression);
+  playGame(progression, description);
 };

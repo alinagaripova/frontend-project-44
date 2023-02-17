@@ -1,12 +1,12 @@
 // eslint-disable no-console
 import readlineSync from 'readline-sync';
-import greeting from './greeting.js';
 
-const gameSkeleton = (gameData) => {
+const playGame = (gameData, description) => {
   const rounds = 3;
-  const { description } = gameData();
-  const name = greeting();
 
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ') || 'UserName';
+  console.log(`Hello, ${name}!`);
   console.log(description);
 
   for (let i = 1; i <= rounds; i += 1) {
@@ -25,4 +25,4 @@ const gameSkeleton = (gameData) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default gameSkeleton;
+export default playGame;

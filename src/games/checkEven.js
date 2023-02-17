@@ -1,8 +1,9 @@
 // eslint-disable no-console
-import gameSkeleton from '../index.js';
+import playGame from '../index.js';
 import generateRandomCount from '../utils/randomCount.js';
 
 const maxCount = 100;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const checkEven = () => {
   const question = generateRandomCount(maxCount);
@@ -12,12 +13,11 @@ const checkEven = () => {
   const gameData = {
     question,
     correctAnswer: String(correctAnswer),
-    description: 'Answer "yes" if the number is even, otherwise answer "no".',
   };
 
   return gameData;
 };
 
 export default () => {
-  gameSkeleton(checkEven);
+  playGame(checkEven, description);
 };
