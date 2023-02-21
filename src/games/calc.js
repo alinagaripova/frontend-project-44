@@ -1,4 +1,4 @@
-// eslint-disable no-console
+
 import playGame from '../index.js';
 import generateRandomCount from '../utils/randomCount.js';
 
